@@ -5,6 +5,7 @@ import 'pages/loading.dart';
 import 'pages/custom.dart';
 import 'pages/choose.dart';
 import 'pages/intro.dart';
+import 'pages/favourites.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,6 +16,7 @@ void main() {
       "/custom": (context) => CustomShirts(),
       "/choose": (context) => ChooseShirt(),
       "/intro": (context) => Intro(),
+      "/favourites": (context) => Favourites(),
     },
   ));
 }

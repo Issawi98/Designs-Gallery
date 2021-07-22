@@ -42,27 +42,13 @@ class _ChooseShirtState extends State<ChooseShirt> {
           IconButton(
             icon: const Icon(Icons.navigate_next),
             tooltip: 'Go to the next page',
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute<void>(
-                builder: (BuildContext context) {
-                  return Scaffold(
-                    appBar: AppBar(
-                      title: const Text('Next page'),
-                    ),
-                    body: Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: fav.map((e){
-                          return Container(
-                            height: 200,
-                            child: Text(e.name),
-                          );
-                        }).toList()
-                      ),
-                    ),
-                  );
-                },
-              ));
+            onPressed: ()async {
+              dynamic result = await Navigator.pushNamed(context, "/favourites", arguments: {"fav" : fav});
+                setState(() {
+                  fav = result["fav"];
+                  print(fav);
+                  
+                });
             },
           ),
         ],
