@@ -1,4 +1,6 @@
+import 'package:designs_gallery/services/tshirt.dart';
 import 'package:flutter/material.dart';
+import 'package:designs_gallery/services/tshirt.dart';
 
 class Favourites extends StatefulWidget {
   @override
@@ -7,25 +9,33 @@ class Favourites extends StatefulWidget {
 
 class _FavouritesState extends State<Favourites> {
   Map fav = {};
-  List favourites = [];
+
+ 
 
   void backButton(){
     Navigator.pop(context, {
-      "fav": favourites
+      //"fav": favourites
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    
+    List favourites = [];
+    for (int i = 0; i < data.length; i++) {
+      if(data[i].isFav)
+        favourites.add(data[i]);
+    }
+
     fav = fav.isEmpty? ModalRoute.of(context).settings.arguments: fav;
-    List favourites = fav["fav"];
-    print(favourites);
+    // List favourites = fav["fav"];
+    // print(favourites);
     return WillPopScope(
           onWillPop: () {
             print('Backbutton pressed (device or appbar button), do whatever you want.');
 
             //trigger leaving and use own data
-            Navigator.pop(context, {
+            Navigator.pushReplacementNamed( context, "/choose", arguments: {
               "fav": favourites
             });
 
@@ -71,7 +81,13 @@ class _FavouritesState extends State<Favourites> {
                                       ),),
                                       IconButton(onPressed: (){
                                         setState(() {
-                                          favourites.remove(e);
+                                          for (var i = 0; i < data.length; i++) {
+                                            if(data[i].name == (e.name)){
+                                              data[i].isFav = false;
+                                            }
+                                          }
+                                          //e.isFav = false;
+                                          //favourites.remove(e);
                                         });
                                       }, 
                                       icon: Icon(Icons.delete, size: 32, color: Color(0xff9a2d6a),)

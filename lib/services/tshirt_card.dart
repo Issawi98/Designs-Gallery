@@ -3,8 +3,9 @@ import 'package:designs_gallery/services/tshirt.dart';
 
 class TshirtsCards extends StatefulWidget {
 
-  Tshirt ts;
-  Function funAdd;
+  final Tshirt ts;
+  final Function funAdd;
+
   TshirtsCards({this.ts, this.funAdd});
 
   @override
@@ -15,10 +16,20 @@ class _TshirtsCardsState extends State<TshirtsCards> {
 
   bool ispressed = false;
 
-  void switchContext(){
-    widget.funAdd();
+  void switchContext(Tshirt ts){
+    //widget.funAdd();
         setState((){
-            ispressed = !ispressed;
+            //ispressed = !ispressed;
+            // if(ts.favourites.contains(ts)){
+            //   widget.ts.removeFromavourites(ts);
+            //   ispressed =false;
+            // }
+            // else 
+            // {
+            //   widget.ts.addToFavourites(ts);
+            //   ispressed = true;
+            // }
+            ts.isFav = !ts.isFav;
         });
   }
 
@@ -89,8 +100,10 @@ class _TshirtsCardsState extends State<TshirtsCards> {
                     width:10
                   ),
                   IconButton(
-                    onPressed: (){switchContext();},
-                    icon: (ispressed) ? Icon(Icons.favorite) : Icon(Icons.favorite_outline_outlined),
+                    onPressed: (){switchContext(widget.ts);},
+                    //icon: ispressed? Icon(Icons.favorite) : Icon(Icons.favorite_outline_outlined),
+                    //icon: widget.ts.favourites.contains(widget.ts)? Icon(Icons.favorite) : Icon(Icons.favorite_outline_outlined),
+                    icon: widget.ts.isFav? Icon(Icons.favorite) : Icon(Icons.favorite_outline_outlined),
                     color: Color(0xff9a2d6a),
                     iconSize: 24,
                     // onPressed: () {

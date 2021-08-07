@@ -9,21 +9,25 @@ class ChooseShirt extends StatefulWidget {
 
 class _ChooseShirtState extends State<ChooseShirt> {
 
-  List data = [
-    Tshirt("Get Shit Done","1GitShitDone.jpg"),
-    Tshirt("Haters Make Me Famous","2HatersMakeme.jpg"),
-    Tshirt("Make Them Suffer","3MakeThem.jpg"),
-    Tshirt("Succes is Revenge","4Sucess.jpg"),
-    Tshirt("Got Nothing Else To Do","5GotNothing.jpg"),
-    Tshirt("Haters Gonna Hate","6HatersGonna.jpg"),
-    Tshirt("Why Always Me","7WhyAlways.jpg"),
-    Tshirt("Why So Serious","8BatMan.jpg"),
-  ];
+  // List data = [
+  //   Tshirt("Get Shit Done","1GitShitDone.jpg"),
+  //   Tshirt("Haters Make Me Famous","2HatersMakeme.jpg"),
+  //   Tshirt("Make Them Suffer","3MakeThem.jpg"),
+  //   Tshirt("Succes is Revenge","4Sucess.jpg"),
+  //   Tshirt("Got Nothing Else To Do","5GotNothing.jpg"),
+  //   Tshirt("Haters Gonna Hate","6HatersGonna.jpg"),
+  //   Tshirt("Why Always Me","7WhyAlways.jpg"),
+  //   Tshirt("Why So Serious","8BatMan.jpg"),
+  // ];
 
+  // call favourit list in car instead
+  // when click bach all favourites are deleted
   List <Tshirt> fav = [];
 
   @override
   Widget build(BuildContext context) {
+    print("---");
+    print(fav);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -43,12 +47,13 @@ class _ChooseShirtState extends State<ChooseShirt> {
             icon: const Icon(Icons.navigate_next),
             tooltip: 'Go to the next page',
             onPressed: ()async {
-              dynamic result = await Navigator.pushNamed(context, "/favourites", arguments: {"fav" : fav});
-                setState(() {
-                  fav = result["fav"];
-                  print(fav);
-                  
-                });
+              //dynamic result = await Navigator.pushNamed(context, "/favourites", arguments: {"fav" : fav});
+              Navigator.pushReplacementNamed(context, "/favourites", arguments: {"fav" : fav});
+                // setState(() {
+                //   fav = result["fav"];
+                //   // print("---");
+                //   // print(fav);
+                // });
             },
           ),
         ],
@@ -77,7 +82,7 @@ class _ChooseShirtState extends State<ChooseShirt> {
                     ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Added To Favourites')));
                   }
-                  print(fav);
+                  //print(fav);
                 },
               );
             }).toList()
