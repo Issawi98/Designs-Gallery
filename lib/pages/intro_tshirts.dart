@@ -14,7 +14,7 @@ class _IntroTshirtsState extends State<IntroTshirts> {
         elevation: 0.0,
         backgroundColor: Colors.black,
         title: Text(
-            "DESIGNS GALLERY",
+            "TSHIRTS",
             style: TextStyle(
             fontFamily: "Folder",
             fontWeight: FontWeight.bold,

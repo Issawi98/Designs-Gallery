@@ -10,7 +10,7 @@ class _LoadingState extends State<Loading> {
 
   void loadData() async{
     await Future.delayed(Duration(seconds: 2), (){
-     Navigator.pushReplacementNamed(context, "/intro");
+     Navigator.pushReplacementNamed(context, "/intro", arguments: {"name": "Issawi"});
     }); 
   }
 

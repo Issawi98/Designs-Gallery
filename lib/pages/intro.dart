@@ -1,4 +1,11 @@
+import 'package:designs_gallery/pages/starting_page.dart';
 import 'package:flutter/material.dart';
+import 'package:designs_gallery/services/choice.dart';
+import '../pages/intro_tshirts.dart';
+import '../pages/cartoons_page.dart';
+import '../pages/gifts_page.dart';
+import '../pages/posters_page.dart';
+import '../pages/starting_page.dart';
 
 class Intro extends StatefulWidget {
   @override
@@ -6,77 +13,50 @@ class Intro extends StatefulWidget {
 }
 
 class _IntroState extends State<Intro> {
+  
+  List <Widget>containers = [
+    StartingPage(),
+    IntroTshirts(),
+    GiftsPage(),
+    CartoonsPage(),
+    PostersPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0.0,
-        backgroundColor: Colors.black,
-        title: Text(
-            "DESIGNS GALLERY",
-            style: TextStyle(
-            fontFamily: "Folder",
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2,
-            color: Colors.white
+
+    //Map data = ModalRoute.of(context).settings.arguments;
+
+    return DefaultTabController(
+      length: choices.length,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            isScrollable: true,
+            tabs: choices.map((e){
+              return Tab(
+               text: e.title,
+               icon: e.icon,
+              );
+            }).toList(),
+          ),
+          centerTitle: true,
+          elevation: 0.0,
+          backgroundColor: Colors.black,
+          title: Text(
+              "DESIGNS GALLERY",
+              style: TextStyle(
+              fontFamily: "Folder",
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2,
+              color: Colors.white
+            ),
           ),
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(20,20,20,0),
-        child: Column(
-          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(
-              height: 40
-            ),
-
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "BECAUSE\nDETAILS\nMATTER".toUpperCase(),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Folder",
-                    fontSize: 40 ,
-                    ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 60
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/introTshirts');
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text('t-shirts'.toUpperCase()),
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.black, // background
-                onPrimary: Colors.white, // foreground
-                elevation: 4,
-                textStyle: TextStyle(fontWeight: FontWeight.bold,),
-                enableFeedback: true,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                //side: BorderSide(width: 5.0, color: Color(0xff9a2d6a),),
-                shadowColor: Color(0xff9a2d6a),
-              ),
-            ),
-            SizedBox(
-              height: 40
-            ),
-      
-          ],
-        ),
-      ),
+        body: TabBarView(
+          children: containers,
+        )
+      )
     );
   }
 }

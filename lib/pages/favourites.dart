@@ -2,12 +2,12 @@ import 'package:designs_gallery/services/tshirt.dart';
 import 'package:flutter/material.dart';
 import 'package:designs_gallery/services/tshirt.dart';
 
-class Favourites extends StatefulWidget {
+class FavouritesPage extends StatefulWidget {
   @override
-  _FavouritesState createState() => _FavouritesState();
+  _FavouritesPageState createState() => _FavouritesPageState();
 }
 
-class _FavouritesState extends State<Favourites> {
+class _FavouritesPageState extends State<FavouritesPage> {
   Map fav = {};
 
  

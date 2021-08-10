@@ -2,12 +2,12 @@ import 'package:designs_gallery/services/tshirt.dart';
 import 'package:designs_gallery/services/tshirt_card.dart';
 import 'package:flutter/material.dart';
 
-class ChooseShirt extends StatefulWidget {
+class ChooseShirtPage extends StatefulWidget {
   @override
-  _ChooseShirtState createState() => _ChooseShirtState();
+  _ChooseShirtPageState createState() => _ChooseShirtPageState();
 }
 
-class _ChooseShirtState extends State<ChooseShirt> {
+class _ChooseShirtPageState extends State<ChooseShirtPage> {
 
   // List data = [
   //   Tshirt("Get Shit Done","1GitShitDone.jpg"),
