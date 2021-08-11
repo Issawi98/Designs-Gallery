@@ -22,9 +22,9 @@ class _FavouritesPageState extends State<FavouritesPage> {
   Widget build(BuildContext context) {
     
     List favourites = [];
-    for (int i = 0; i < data.length; i++) {
-      if(data[i].isFav)
-        favourites.add(data[i]);
+    for (int i = 0; i < tshirts_data.length; i++) {
+      if(tshirts_data[i].isFav)
+        favourites.add(tshirts_data[i]);
     }
 
     fav = fav.isEmpty? ModalRoute.of(context).settings.arguments: fav;
@@ -81,9 +81,9 @@ class _FavouritesPageState extends State<FavouritesPage> {
                                       ),),
                                       IconButton(onPressed: (){
                                         setState(() {
-                                          for (var i = 0; i < data.length; i++) {
-                                            if(data[i].name == (e.name)){
-                                              data[i].isFav = false;
+                                          for (var i = 0; i < tshirts_data.length; i++) {
+                                            if(tshirts_data[i].name == (e.name)){
+                                              tshirts_data[i].isFav = false;
                                             }
                                           }
                                           //e.isFav = false;

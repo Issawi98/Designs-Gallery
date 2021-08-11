@@ -63,7 +63,6 @@ class _IntroTshirtsState extends State<IntroTshirts> {
                     fontWeight: FontWeight.bold,
                     fontFamily: "Folder",
                     fontSize: 40 ,
-                    
                     ),
                 ),
               ),

@@ -26,6 +26,8 @@ dependencies:
 
   flutter_spinkit: "^4.1.2"
   font_awesome_flutter: ^9.1.0
+  carousel_slider: ^4.0.0
+  smooth_page_indicator: ^0.2.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -51,6 +53,7 @@ flutter:
     - assets/
     - assets/Cartoon/
     - assets/Gifts/
+    - assets/Gifts/tmp
     - assets/Identity/
     - assets/Posters/
     - assets/tshirts/

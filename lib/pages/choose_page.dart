@@ -68,7 +68,7 @@ class _ChooseShirtPageState extends State<ChooseShirtPage> {
             crossAxisSpacing: 20.0,
             mainAxisSpacing: 20.0,
             shrinkWrap: true,
-            children: data.map((e){
+            children: tshirts_data.map((e){
               return TshirtsCards(
                 ts: e,
                 funAdd: () {

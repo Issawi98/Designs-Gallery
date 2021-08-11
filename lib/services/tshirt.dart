@@ -29,7 +29,7 @@ class Tshirt extends Product{
 
 }
 
-  List data = [
+  List tshirts_data = [
     Tshirt(name: "Get Shit Done",image: "1GitShitDone.jpg"),
     Tshirt(name:"Haters Make Me Famous",image:"2HatersMakeme.jpg"),
     Tshirt(name:"Make Them Suffer",image:"3MakeThem.jpg"),
