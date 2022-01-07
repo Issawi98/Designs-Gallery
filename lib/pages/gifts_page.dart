@@ -40,7 +40,7 @@ class _GiftsPageState extends State<GiftsPage> {
                     //aspectRatio: 16/9,
                     //viewportFraction: 0.8,
                     //initialPage: 0,
-                    autoPlayInterval: Duration(seconds: 1),
+                    autoPlayInterval: Duration(seconds: 3),
                     autoPlayAnimationDuration: Duration(milliseconds: 800),
                     autoPlayCurve: Curves.fastOutSlowIn,
                     enlargeCenterPage: true,

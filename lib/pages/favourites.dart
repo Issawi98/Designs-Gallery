@@ -68,7 +68,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
                                 padding: const EdgeInsets.all(15.0),
                                 child: Column(
                                   children: [
-                                    Image.asset('assets/tshirts/${e.image}', scale: 0.3,),
+                                    Image.asset(e.image, scale: 0.3,),
                                     Row(
                                     children: [
                                       Text(

@@ -61,7 +61,7 @@ class _TshirtsCardsState extends State<TshirtsCards> {
                   ],),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12),
-                    child: Image.asset('assets/tshirts/${widget.ts.image}', fit: BoxFit.cover,),
+                    child: Image.asset(widget.ts.image, fit: BoxFit.cover,),
                    ),
                 ),
             ),

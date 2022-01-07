@@ -1,3 +1,4 @@
+
 import 'package:designs_gallery/pages/starting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:designs_gallery/services/choice.dart';
@@ -13,7 +14,6 @@ class Intro extends StatefulWidget {
 }
 
 class _IntroState extends State<Intro> {
-  
   List <Widget>containers = [
     StartingPage(),
     IntroTshirts(),

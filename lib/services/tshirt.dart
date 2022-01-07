@@ -30,12 +30,12 @@ class Tshirt extends Product{
 }
 
   List tshirts_data = [
-    Tshirt(name: "Get Shit Done",image: "1GitShitDone.jpg"),
-    Tshirt(name:"Haters Make Me Famous",image:"2HatersMakeme.jpg"),
-    Tshirt(name:"Make Them Suffer",image:"3MakeThem.jpg"),
-    Tshirt(name:"Succes is Revenge",image:"4Sucess.jpg"),
-    Tshirt(name:"Got Nothing Else To Do",image:"5GotNothing.jpg"),
-    Tshirt(name:"Haters Gonna Hate",image:"6HatersGonna.jpg"),
-    Tshirt(name:"Why Always Me",image:"7WhyAlways.jpg"),
-    Tshirt(name:"Why So Serious",image:"8BatMan.jpg"),
+    Tshirt(name: "Get Shit Done",image: "assets/tshirts/1GitShitDone.jpg"),
+    Tshirt(name:"Haters Make Me Famous",image:"assets/tshirts/2HatersMakeme.jpg"),
+    Tshirt(name:"Make Them Suffer",image:"assets/tshirts/3MakeThem.jpg"),
+    Tshirt(name:"Succes is Revenge",image:"assets/tshirts/4Sucess.jpg"),
+    Tshirt(name:"Got Nothing Else To Do",image:"assets/tshirts/5GotNothing.jpg"),
+    Tshirt(name:"Haters Gonna Hate",image:"assets/tshirts/6HatersGonna.jpg"),
+    Tshirt(name:"Why Always Me",image:"assets/tshirts/7WhyAlways.jpg"),
+    Tshirt(name:"Why So Serious",image:"assets/tshirts/8BatMan.jpg"),
   ];
